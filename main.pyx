@@ -1,9 +1,9 @@
 from pathlib import Path
 import tkinter as tk
+from tkinter.messagebox import askyesno
 import tkinter.ttk as ttk
 from threading import Thread
 
-templocation = f"{Path.home()}\\AppData\\Local\\Temp"
 
 
 root = tk.Tk()
@@ -17,22 +17,36 @@ p = ttk.Progressbar(root, orient="horizontal", length=700, mode="indeterminate",
 p.pack()
 
 p['value'] = 0
+
+def updateRoot():
+    while True:
+        root.update()
+
 def deletetempfiles():
+    import os
+    affectAllUsers = askyesno("Users affected", f"Do you want to delete the temporary files of all all users?\n The current user is {os.getlogin()}")        
     status['text'] = f"discovering files..."
+    templocations = [
+        f"{Path.home()}\\AppData\\Local\\Temp"
+    ]
+    if affectAllUsers:
+        for user in os.listdir("C:\\Users"):
+            templocations.append(f"C:\\Users\\{user}\\AppData\\Local\\Temp")
+
     p["mode"] = "indeterminate"
     root.update()
-    import os
     files = []
     folders = []
     filecount = 1
-    for (dirpath, dirnames, filenames) in os.walk(templocation):
-        for dirname in dirnames:
-            folders.append(os.path.join(dirpath, dirname))
-        for filename in filenames:
-            status['text'] = f"discovering {filecount} files..."
-            files.append(os.path.join(dirpath, filename))
-            root.update()
-            filecount += 1
+    for location in templocations:
+        for (dirpath, dirnames, filenames) in os.walk(location):
+            for dirname in dirnames:
+                folders.append(os.path.join(dirpath, dirname))
+            for filename in filenames:
+                status['text'] = f"discovering {filecount} files..."
+                files.append(os.path.join(dirpath, filename))
+                root.update()
+                filecount += 1
 
 
     total = len(files)
@@ -42,7 +56,7 @@ def deletetempfiles():
     p["mode"] = "determinate"
     root.update()
     for file, i in zip(files, range(total)):
-        status['text'] = f"deleting {file} {i+1}/{total}"
+        status['text'] = f"deleting {file}\n{i+1}/{total}"
         try:
             os.remove(f"{file}")
         except (PermissionError, FileNotFoundError):
@@ -54,7 +68,7 @@ def deletetempfiles():
 
     p['value'] = 0
     for folder, i in zip(folders, range(totalfolders)):
-        status['text'] = f"deleting folder {folder} {i+1}/{totalfolders}"
+        status['text'] = f"deleting folder {folder}\n{i+1}/{totalfolders}"
         try:
             os.rmdir(f"{folder}")
         except (PermissionError, FileNotFoundError, OSError):
@@ -65,5 +79,6 @@ def deletetempfiles():
     p['value'] = 100
 
 Thread(target=deletetempfiles).start()
+Thread(target=updateRoot).start()
 
 root.mainloop()
