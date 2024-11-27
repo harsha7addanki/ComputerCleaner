@@ -24,5 +24,5 @@ compiler.link_executable([
     "build/cc.obj",
     "build/tempfilecleaner.obj",
     "build/main.obj",
-], "cc", libraries=["python310"], library_dirs=["C:/Program Files/Python310/libs"], output_dir="build", extra_preargs=["/NOIMPLIB", "/NOEXP"])
+], "cc", libraries=["python310"], library_dirs=["C:/Program Files/Python310/libs"], output_dir="build", extra_preargs=["/NOIMPLIB", "/NOEXP", "/ENTRY:wmainCRTStartup", "/subsystem:windows"])
 print("Done")
