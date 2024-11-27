@@ -7,7 +7,8 @@ cdef void start(status, progressbar, int affectAllUsers):
         progressbar.pack()
 
         import os
-        status['text'] = f"discovering files..."
+        # Find all files/folders In temporary directories
+        status.configure(text=f"discovering files...")
         templocations = [
             f"{Path.home()}\\AppData\\Local\\Temp",
             "C:\\Windows\\Temp"
@@ -59,5 +60,5 @@ cdef void start(status, progressbar, int affectAllUsers):
         status.configure(text="Finished!")
         progressbar.set(100)
     thread = Thread(target=runFileRemover)
-    thread.setDaemon(True)
+    thread.daemon = True
     thread.start()
