@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Computer Cleaner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f468785845bdc591237a95411cca529ee418dea0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Computer Cleaner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Computer Cleaner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
