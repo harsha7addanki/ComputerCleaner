@@ -41,8 +41,7 @@ namespace Computer_Cleaner
         public (List<string>, List<string>) DicoverFiles(Label status) {
             var locations = new List<string>();
             locations.Add(Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp");
-            var configadded = File.ReadAllText("searchlocations.txt").Split("\n").ToList();
-            configadded.ForEach(x => x.Trim().Trim(Environment.NewLine.ToCharArray()));
+            var configadded = FileLocationUtility.GetLocationsFromFile("searchlocations.txt");
             locations.AddRange(configadded);
             var files = new List<string>();
             var folders = new List<string>();

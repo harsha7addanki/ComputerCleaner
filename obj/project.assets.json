@@ -430,7 +430,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\harsh\\.nuget\\packages\\": {}
+    "C:\\Users\\ipad\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -438,11 +438,11 @@
       "projectUniqueName": "E:\\aaIMPORTANT\\Computer Cleaner\\Computer Cleaner.csproj",
       "projectName": "Computer Cleaner",
       "projectPath": "E:\\aaIMPORTANT\\Computer Cleaner\\Computer Cleaner.csproj",
-      "packagesPath": "C:\\Users\\harsh\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\ipad\\.nuget\\packages\\",
       "outputPath": "E:\\aaIMPORTANT\\Computer Cleaner\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\harsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ipad\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -450,7 +450,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\harsh\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+        "D:\\Computer\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
