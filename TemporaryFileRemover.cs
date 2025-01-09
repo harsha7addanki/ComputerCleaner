@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Computer_Cleaner
         private List<string> files;
         private List<string> folders;
         private long discoveredSize;
-        public bool cont = false;
+        public bool cont = true;
 
 
         private string ToSI(double d, string format = null)
@@ -48,8 +49,10 @@ namespace Computer_Cleaner
             var filesdiscovered = 0;
             var totalfilesize = 0l;
             foreach(var location in locations) {
+                Debug.WriteLine(location);
                 foreach(var file in Directory.EnumerateFiles(location))
                 {
+                    Debug.WriteLine(file);
                     var fi1 = new FileInfo(file);
                     totalfilesize += fi1.Length;
                     status.Text = $"Discovering {ToSI(totalfilesize)}B";
@@ -78,8 +81,15 @@ namespace Computer_Cleaner
             var originalSize = discoveredSize;
             foreach(var file in files)
             {
-                var info = new FileInfo(file);
-                discoveredSize -= info.Length;
+                try
+                {
+                    File.Delete(file);
+                    var info = new FileInfo(file);
+                    discoveredSize -= info.Length;
+                }catch (Exception ex)
+                {
+                    // skip over
+                }
                 status.Text = $"Deleteted {ToSI(discoveredSize)} out of {ToSI(originalSize)}";
                 bar.Value = (int)(discoveredSize / originalSize * 100);
             }
@@ -93,6 +103,13 @@ namespace Computer_Cleaner
                 folderCount--;
                 status.Text = $"Deleteted {folderCount} out of {folders.Count}";
                 bar.Value = (int)(folderCount / folders.Count * 100);
+                try
+                {
+                    Directory.Delete(folder);
+                }catch(Exception ex)
+                {
+                    // skip over
+                }
             }
         }
     }

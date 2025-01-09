@@ -1,4 +1,7 @@
-﻿namespace Computer_Cleaner
+﻿using System.Diagnostics;
+using System.Text;
+
+namespace Computer_Cleaner
 {
     internal class FileLocationUtility
     {
@@ -6,16 +9,21 @@
         {
             List<string> locations = new List<string>();
             if (File.Exists(path)) {
-                using (var filestream = new FileStream(path, FileMode.Open, FileAccess.Read))
+                const Int32 BufferSize = 128;
+                using (var fileStream = File.OpenRead(path))
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
                 {
-                    using(var file = new StreamReader(filestream, System.Text.Encoding.UTF8, true, 128)){
-                        string lineOfText;
-                        while ((lineOfText = file.ReadLine()) != null)
-                        {
-                            locations.Add(lineOfText);
-                        }
+                    String line;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        locations.Add(line);
+                        Debug.WriteLine(line);
                     }
                 }
+            }
+            else
+            {
+                Debug.WriteLine("no searchoptions");
             }
 
             return locations;

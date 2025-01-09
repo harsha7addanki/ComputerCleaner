@@ -31,3 +31,4 @@ E:\aaIMPORTANT\Computer Cleaner\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0
 E:\aaIMPORTANT\Computer Cleaner\obj\Debug\net8.0-windows\Computer Cleaner.csproj.AssemblyReference.cache
 E:\aaIMPORTANT\Computer Cleaner\obj\Debug\net8.0-windows\Computer_Cleaner.BasicTemporaryRemover.resources
 E:\aaIMPORTANT\Computer Cleaner\obj\Debug\net8.0-windows\Computer.285FF56D.Up2Date
+E:\aaIMPORTANT\Computer Cleaner\obj\Debug\net8.0-windows\Computer Cleaner.sourcelink.json

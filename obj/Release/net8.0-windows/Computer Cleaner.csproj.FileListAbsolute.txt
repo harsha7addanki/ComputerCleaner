@@ -31,3 +31,4 @@ E:\aaIMPORTANT\Computer Cleaner\obj\Release\net8.0-windows\refint\Computer Clean
 E:\aaIMPORTANT\Computer Cleaner\obj\Release\net8.0-windows\Computer Cleaner.pdb
 E:\aaIMPORTANT\Computer Cleaner\obj\Release\net8.0-windows\Computer Cleaner.genruntimeconfig.cache
 E:\aaIMPORTANT\Computer Cleaner\obj\Release\net8.0-windows\ref\Computer Cleaner.dll
+E:\aaIMPORTANT\Computer Cleaner\obj\Release\net8.0-windows\Computer Cleaner.sourcelink.json

@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\harsh\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\harsh\\.nuget\\packages"
+      "C:\\Users\\ipad\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ipad\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
