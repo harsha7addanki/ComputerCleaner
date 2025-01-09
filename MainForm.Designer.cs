@@ -30,6 +30,7 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label6 = new Label();
             label3 = new Label();
             progressBar1 = new ProgressBar();
             label2 = new Label();
@@ -69,6 +70,15 @@
             tabPage1.Text = "Temporary Files Cleaner";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(759, 437);
+            label6.Name = "label6";
+            label6.Size = new Size(41, 17);
+            label6.TabIndex = 4;
+            label6.Text = "v1.0.0";
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -98,6 +108,7 @@
             // 
             // button1
             // 
+            button1.FlatStyle = FlatStyle.System;
             button1.Location = new Point(352, 86);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
@@ -172,10 +183,14 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label6);
             Controls.Add(label1);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Computer Cleaner";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -199,5 +214,6 @@
         private ComboBox comboBox1;
         private Label label4;
         private Button button2;
+        private Label label6;
     }
 }
